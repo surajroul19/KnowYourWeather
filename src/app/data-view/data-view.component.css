@@ -1,0 +1,35 @@
+.tableClass{
+    border: 2px solid black;
+}
+
+.section-view{
+    top: 25%;
+    /* bottom: 8%; */
+    left: -3%;
+    position: absolute;
+    background-color: black;
+    padding: 5% 0% 4% 0%;
+    color: white;
+    border-radius: 50px;
+}
+
+.position-view{
+    top: 25%;
+    /* bottom: 8%; */
+    position: absolute;
+}
+
+input{
+    color: white;
+    background-color: transparent;
+    border: none;
+    border-radius: 0px;
+    border-bottom: 1px solid white;
+}
+
+input:active{
+    color: white;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid white;
+}

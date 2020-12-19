@@ -1,0 +1,104 @@
+<div class="container position-view">
+    <div class="row">
+        <div class="col-md-7 offset-md-4">
+            <div class="section-view">
+                <div class="col-sm-11 offset-md-1">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row" >
+                                <div class="col-md-1">
+                                    <i class="fa fa-map-marker fa-3x"></i>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="text" [(ngModel)]="cityName" placeholder="Location" class="form-control">
+                                </div>
+                                <div class="col-md-2">
+                                    <button class="btn btn-info" (click)="getDetails()">
+                                        <i class="fa fa-search" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple">
+                            <p style="font-size: 20px; color: white">Loading...</p>
+                          </ngx-spinner>
+
+                          <div class="col-sm-12">
+                            <div *ngIf="dataUnavailable && !tableValue">
+                                <div class="row">
+                                    <div class="col-md-5 offset-md-4">
+                                      <h2>
+                                          <i class="fa fa-frown-o fa-3x"></i>
+                                        </h2>
+                                    </div>
+                                    <div class="col-sm-6 offset-md-3">
+                                        <p>Sorry!!! Location not found</p>
+                                    </div>
+                                </div>   
+                            </div>
+
+                          </div>
+                         
+                       
+                        <div class="col-sm-12">
+                            <div *ngIf="tableValue">
+                                <div class="col-sm-12">
+                                    <div *ngIf="tableValue">
+                                        <div class="row" *ngIf="tableValue">
+                                            <div class="col-sm-6">
+                                                <label for="temp">Temp.</label>
+                                                <h2>
+                                                    <i class="fa fa-thermometer-empty"></i> {{tableValue.main.temp}}
+                                                </h2>
+                                            </div>
+                                        </div>
+                                        <div class="row" *ngIf="tableValue">
+                                            <div class="col-sm-3">
+                                                <label for="feels like">Feels like</label>
+                                                <h4>
+                                                    <i class="fa fa-thermometer-empty"></i>  {{tableValue.main.feels_like}}
+                                                </h4>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <label for="feels like">Max temp</label>
+                                                <h4>
+                                                    <i class="fa fa-thermometer-full"></i>  {{tableValue.main.temp_max}}
+                                                </h4>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <label for="feels like">Wind speed</label>
+                                                <i class="fa fa-wind fa-3x"></i>
+                                                <h4>
+                                                    <i class="fa fa-share"></i> {{tableValue.wind.speed}}
+                                                </h4>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <label for="feels like">Humidity</label>
+                                                <h4>
+                                                    <i class="fa fa-tint"></i> {{tableValue.main.humidity}}
+                                                </h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p>
+                                        Note: All temprature are in <span>&#8451;</span>
+                                    </p>
+                                    <div class="row">
+                                        <div class="col-sm-5 offset-md-5">
+                                            <i class="fa fa-refresh fa-3x" aria-hidden="true" (click)="getDetails()"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                              
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+
+        </div>
+        
+
+    </div>
+</div>
